@@ -29,15 +29,16 @@ class RegExMul:
             self.restricted_sum_of_mul_ops += self.extract_product(do_op)
         return self.restricted_sum_of_mul_ops
 
-puzzle = ""
-while True:
-    piece = input()
+if __name__ == "__main__":
+    puzzle = ""
+    while True:
+        piece = input()
 
-    if piece == "":
-        break
+        if piece == "":
+            break
 
-    puzzle += piece
+        puzzle += piece
 
-solver = RegExMul()
-print(solver.free_mul(puzzle))
-print(solver.restricted_mul(puzzle))
+    solver = RegExMul()
+    print(solver.free_mul(puzzle))
+    print(solver.restricted_mul(puzzle))

@@ -45,19 +45,20 @@ def is_decreasing(lst: list[int], tol: int = 0) -> bool:
 
     return flag
 
-TOLERANCE_LEVEL: int = 1
-num_of_safe_reports: int = 0
+if __name__ == "__main__":
+    TOLERANCE_LEVEL: int = 1
+    num_of_safe_reports: int = 0
 
-while True:
-    report: list[int] = list(map(int, input().split()))
+    while True:
+        report: list[int] = list(map(int, input().split()))
 
-    if report == []:
-        break
+        if report == []:
+            break
 
-    if is_increasing(report, TOLERANCE_LEVEL):
-        num_of_safe_reports += 1
-    elif is_decreasing(report, TOLERANCE_LEVEL):
-        num_of_safe_reports += 1
+        if is_increasing(report, TOLERANCE_LEVEL):
+            num_of_safe_reports += 1
+        elif is_decreasing(report, TOLERANCE_LEVEL):
+            num_of_safe_reports += 1
 
-print(num_of_safe_reports)
+    print(num_of_safe_reports)
     
