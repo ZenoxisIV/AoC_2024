@@ -2,8 +2,6 @@ def is_within_limit(a: int, b: int) -> bool:
     return 1 <= abs(a - b) <= 3
 
 def is_increasing(lst: list[int], tol: int = 0) -> bool:
-    flag: bool = True
-    
     for i in range(len(lst) - 1):
         if lst[i] < lst[i + 1] and is_within_limit(lst[i], lst[i + 1]):
             continue
@@ -18,14 +16,11 @@ def is_increasing(lst: list[int], tol: int = 0) -> bool:
             if is_increasing(trial_lst_A, tol - 1) or is_increasing(trial_lst_B, tol - 1):
                 break
 
-        flag = False
-        break
-
-    return flag
+        return False
+    
+    return True
 
 def is_decreasing(lst: list[int], tol: int = 0) -> bool:
-    flag: bool = True
-    
     for i in range(len(lst) - 1):
         if lst[i] > lst[i + 1] and is_within_limit(lst[i], lst[i + 1]):
             continue
@@ -40,10 +35,9 @@ def is_decreasing(lst: list[int], tol: int = 0) -> bool:
             if is_decreasing(trial_lst_A, tol - 1) or is_decreasing(trial_lst_B, tol - 1):
                 break
 
-        flag = False
-        break
+        return False
 
-    return flag
+    return True
 
 if __name__ == "__main__":
     TOLERANCE_LEVEL: int = 1
