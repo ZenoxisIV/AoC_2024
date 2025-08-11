@@ -1,6 +1,6 @@
 class CeresWordSearch:
     def __init__(self, grid: list[list[str]]) -> None:
-        self.grid = grid
+        self.grid: list[list[str]] = grid
 
     def count_words_found(self, word: str, x_pos: int, y_pos: int) -> int:
         DIRECTIONS: list[tuple[int, int]] = [(0,-1), (0, 1), (-1, 0), (1, 0), (-1, -1), (1, -1), (-1, 1), (1, 1)]
