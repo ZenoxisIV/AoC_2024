@@ -24,8 +24,8 @@ class GuardGallivant:
     def can_traverse_map(self, init_pos: tuple[int | None, int | None], curr_state: str) -> bool:
         guard_y_pos, guard_x_pos = init_pos
 
-        assert guard_y_pos != None
-        assert guard_x_pos != None
+        assert guard_y_pos is not None
+        assert guard_x_pos is not None
 
         next_y_pos: int = guard_y_pos + self.directions[curr_state][0]
         next_x_pos: int = guard_x_pos + self.directions[curr_state][1]
@@ -59,8 +59,8 @@ class GuardGallivant:
         curr_state: str = "UP"
         guard_y_pos, guard_x_pos = self.search_index(guard_symbol)
 
-        assert guard_y_pos != None
-        assert guard_x_pos != None
+        assert guard_y_pos is not None
+        assert guard_x_pos is not None
 
         while self.can_traverse_map((guard_y_pos, guard_x_pos), curr_state):
             self.grid[guard_y_pos][guard_x_pos] = '.'
@@ -146,8 +146,8 @@ if __name__ == "__main__":
 
     print(solver.get_distinct_positions_count())
 
-    assert init_guard_y_pos != None
-    assert init_guard_x_pos != None
+    assert init_guard_y_pos is not None
+    assert init_guard_x_pos is not None
 
     for i, row in enumerate(plotted_map):
         for j, symbol in enumerate(row):
