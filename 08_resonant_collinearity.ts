@@ -52,9 +52,9 @@ for (let i = 1; i < nodeMap.length - 1; i++) {
                             "LEFT"
                         );
                     }
-                    q += 1;
+                    q++;
                 }
-                p += 1;
+                p++;
             }
 
             p = 1;
@@ -90,9 +90,9 @@ for (let i = 1; i < nodeMap.length - 1; i++) {
                             "RIGHT"
                         );
                     }
-                    q += 1;
+                    q++;
                 }
-                p += 1;
+                p++;
             }
         }
     }
