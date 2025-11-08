@@ -41,10 +41,10 @@ function moveWholeFiles(parsedDisk: string[]): string[] {
 
     let freeSpace: number = 0;
 
-    let canMoveRight: boolean = true;
+    let canMoveLeft: boolean = true;
 
     while (movePointer !== 0) {
-        if (canMoveRight) {
+        if (canMoveLeft) {
             fileID = tempDisk[movePointer];
 
             if (fileID === ".") {
@@ -60,7 +60,7 @@ function moveWholeFiles(parsedDisk: string[]): string[] {
                     break;
                 }
             }
-            canMoveRight = false;
+            canMoveLeft = false;
         }
 
         if (tempDisk[storagePointer] === ".") {
@@ -78,7 +78,7 @@ function moveWholeFiles(parsedDisk: string[]): string[] {
                 storagePointer = 0;
                 fileIDCount = 0;
                 freeSpace = 0;
-                canMoveRight = true;
+                canMoveLeft = true;
                 continue;
             }
 
