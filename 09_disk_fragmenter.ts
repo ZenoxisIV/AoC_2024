@@ -148,17 +148,8 @@ function parseDiskContents(disk: string, currID: number): string[] {
 
 async function getInput(): Promise<string> {
     const buffer = new Uint8Array(1048576);
+    const bytesRead = await Deno.stdin.read(buffer);
+    const rawText: string = new TextDecoder().decode(buffer.slice(0, bytesRead!));
 
-    while (true) {
-        const bytesRead = await Deno.stdin.read(buffer);
-
-        if (bytesRead === null) {
-            break;
-        }
-    }
-
-    const rawText: string = new TextDecoder().decode(buffer);
-    const puzzle: string[] = rawText.split("\n");
-
-    return puzzle[0];
+    return rawText.trim();
 }
